@@ -7,10 +7,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 
 import { SafeAreaView, StyleSheet, ScrollView, View, Text, Button} from 'react-native';
-import WelcomeScreen from './app/screens/NewsScreen';
+import NewsScreen from './app/screens/NewsScreen';
+import MainTabScreen from './app/screens/MainTabScreen';
 
 
-const HomeScreen = (navigation) => {
+const HomeScreen = ({navigation}) => {
   return (
     <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
       <Text>HomeScreen (AH Pharmacy)</Text>
@@ -22,15 +23,32 @@ const HomeScreen = (navigation) => {
   );
 };
 
-const NewsScreen = () => {
+const NewsScreen = ({navigation}) => {
   return (
     <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
       <Text>NewsScreen</Text>
+      <Button 
+      title="Go to News Screen...again" 
+      onPress={() => navigation.push("News")}
+      />
+      <Button 
+      title="Go to home" 
+      onPress={() => navigation.navigate("Home")}
+      />
+      <Button 
+      title="Go back" 
+      onPress={() => navigation.goBack()}
+      />
+      <Button 
+      title="Go to the first screen" 
+      onPress={() => navigation.PopToTop()}
+      />
     </View>
   );
 };
 
 const Stack = createStackNavigator();
+
 
 const App = () => {
   return(
@@ -44,7 +62,9 @@ const App = () => {
           fontWeight: 'bold'
         }
       }}> 
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home" component={MainTabScreen} options={{
+          title: 'Overview'
+        }}/>
         <Stack.Screen name="News" component={NewsScreen} />
       </Stack.Navigator>
     </NavigationContainer>

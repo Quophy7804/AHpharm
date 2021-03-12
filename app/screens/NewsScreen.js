@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, ImageBackground, StyleSheet, Text, View } from 'react-native';
 
-function WelcomeScreen(props) {
+function NewsScreen(props) {
     return (
        <ImageBackground
        style={ styles.background} 
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
     
 })
 
-export default WelcomeScreen;
+export default NewsScreen;
