@@ -16,7 +16,7 @@ const HomeScreen = ({navigation}) => {
     <View style={{flex:1, alignItems:"center", justifyContent:"center"}}>
       <Text>HomeScreen (AH Pharmacy)</Text>
       <Button 
-      title="Go to  News Screen" 
+      title="Go to  News Screen"
       onPress={() => navigation.navigate("News")}
       />
     </View>

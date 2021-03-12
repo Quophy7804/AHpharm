@@ -16,7 +16,7 @@ const MainTabScreen = () => (
     <Tab.Navigator
     initialRouteName="Home"
     tabBarOptions={{
-      activeTintColor: '#fff',
+      activeTintColor: '#10284e',
     }}
   >
     <Tab.Screen
